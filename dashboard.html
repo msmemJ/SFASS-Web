@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<div class="Context">
+        <div class="side-context">
+                <div class="profile">
+                    <div class="profile-Logo"><img src="images/profile.png" alt=""></div>
+                    <div class="admin" id="admin-profile" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">Admin</div>
+                    <button id="logout-button" class="logout-button" style="display:none;">
+                    <span class="logout-icon" aria-hidden="true"></span> Logout
+                </button>
+                </div>
+
+
+            <div class="nav">
+                <div class="nav-item dashboard active">
+                    <img src="images/dashboard.png" alt="">
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="nav-item pending-requests">
+                    <img src="images/pendings.png" alt="">
+                    <a href="requests.html">Pending Requests</a>
+                </div>
+                <div class="nav-item facilities">
+                    <img src="images/facilities.png" alt="">
+                    <a href="Facilities1.html">Facilities</a>
+                </div>
+            </div>
+        </div>
+
+    <div class="main-content"> <!-- NEW DIV TO HOLD HEADER AND TABLE -->
+        <div class="header">
+            <div class="blue">
+                <div class="Logos">
+                    <div class="SRCB-Logo">
+                        <img src="images/SRCB.png" alt="SRCB Logo" />
+                    </div>
+                    <div class="SFASS-Logo">
+                        <img src="images/SFASS.png" alt="SFASS Logo" />
+                    </div>
+                </div>
+                <div class="title">
+                    <div class="Text-2">SRCB</div>
+                    <div class="mess-1">
+                        School Facilities Activity Scheduling System
+                    </div>
+                </div>
+            </div>
+            <div class="header-2">
+                Dashboard
+            </div>
+        </div>
+
+        <div class="context">
+            <div class="box-1"><span>5<span class="text">Reserved</span></span>
+                <div class="inbox-1">
+                   <span class="mess">Total Bookings</span>
+                </div>
+            </div>
+
+            <div class="box-2"><span>2<span class="T"> waiting for approval </span></span>
+                <div class="inbox-2">
+                  <span class="mess1">Pending Request</span>
+                </div>
+            </div>
+
+            <div class="box-3">
+                <div class="pics">
+                    <div class="pic-1">
+                        <img src="images/Audi-gym.jpg" alt="">
+                    </div>
+                    <div class="pic-2">
+                        <img src="images/AVR.jpg" alt="">
+                    </div>
+                </div>
+                <div class="inbox-3">
+                    <span class="mess2">Facilities Available</span>
+                </div>
+            </div>
+
+    </div>
+<script>
+    const adminProfile = document.getElementById('admin-profile');
+    const logoutButton = document.getElementById('logout-button');
+
+    adminProfile.addEventListener('click', () => {
+        if (logoutButton.style.display === 'none' || logoutButton.style.display === '') {
+            logoutButton.style.display = 'inline-block';
+            adminProfile.setAttribute('aria-expanded', 'true');
+        } else {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    logoutButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    // Optional: Hide logout button if clicking outside
+    document.addEventListener('click', (event) => {
+        if (!adminProfile.contains(event.target) && !logoutButton.contains(event.target)) {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
+
+</div>
+
+
+</body>
+</html>

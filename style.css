@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Onest:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('images/schoolBG.png');
+    background-blend-mode: luminosity;
+    background-color: #02026f;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    font-family: "Onest", sans-serif;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.layer-blue{
+    width: 50%;
+    height: 695px;
+    background-color: rgba(4, 20, 144, 0.666); 
+}
+
+.Logos {
+    display: flex;
+    padding: 30px 50px 10px 50px;
+    margin-bottom: 50px;
+}
+
+.SRCB-Logo img {
+    width: 100px;
+}
+
+.SRCB-Logo {
+    padding-right: 10px;
+    border-right: 2px solid white;
+}
+
+.SFASS-Logo img{
+    width: 105px;
+    height: 105px;
+}
+
+.Text-1 {
+    padding-top: 100px;
+    padding-left: 50px;
+    margin-bottom: -21px;
+    font-size: 70px;
+    color: white;
+    font-family: "Oleo Script Swash Caps", cursive;
+}
+
+.Text-2 {
+    padding-left: 50px;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+}
+
+.layer-white {
+    background-color: white;
+    width: 50%;
+    height: 695px;
+    margin: 0;
+    padding: 0;
+}
+
+.mess-1 {
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: 35px;
+    color: white;
+}
+
+.mess-2{
+    padding-top: 100px;
+    padding-left: 330px;
+    font-size: 40px;
+    color: #00095E;
+    font-weight: bold;
+}
+
+.logs{
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 130px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+}
+
+.username,
+.password {
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: #00095E;
+}
+
+.user,
+.pass {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #2E3192;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.user:focus,
+.pass:focus {
+    border-color: #1a1a72;
+    outline: none;
+}
+
+.btn {
+    background-color: #2E3192;
+    padding: 12px 25px;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 45%;
+    box-sizing: border-box;
+    margin-right: 55px;
+}
+
+.btn-1 {
+    background-color: #2E3192;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #1a1a72;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-1:hover {
+    background-color: #1a1a72;
+}
+
+.btn:focus {
+    outline: 3px solid #4d4dff;
+    outline-offset: 2px;
+}
+.user,
+.pass {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #2E3192;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.user:focus,
+.pass:focus {
+    border-color: #1a1a72;
+    outline: none;
+}
+

@@ -1,0 +1,851 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&family=Onest:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Onest", sans-serif;
+}
+
+.blue{
+    display: flex;
+    align-items: center;
+    background-color: #2e3192;
+    width: 100%;
+    height: 80px;
+}
+
+.white{
+    background-color: white;
+    border-bottom:1px solid black ;
+    width: 100%;
+    height: 50px;
+}
+
+.Logos {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.SRCB-Logo img {
+    width: 55px;
+}
+
+.SFASS-Logo img{
+    width: 55px;
+    height: 55px;
+}
+
+.Text-2 {
+    padding-left: 10px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.mess-1 {
+    padding-left: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    padding-bottom: 3px;
+    transition: all 0.3s ease;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+    color: #222222; /* slightly lighter than black */
+}
+
+.nav .active a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    color: #222222; /* slightly lighter than black */
+}
+
+.nav{
+    padding-left: 500px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+
+}
+
+.Home,
+.About,
+.Facilities{
+    width: 20%;
+    padding: 10px;
+} 
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('images/schoolBG.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background-color: rgba(4, 20, 144, 0.666); /* blue transparent overlay */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-hero-section {
+    height: 75vh;
+    padding: 20px 0;
+}
+
+.calendar-overlay {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px 0;
+}
+
+#calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 0 20px;
+}
+
+#calendar-header button {
+    background-color: #2e3192;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#calendar-header h2 {
+    margin: 0;
+    font-family: 'Onest', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: white;
+}
+
+#calendar {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: 'Onest', sans-serif;
+    table-layout: fixed;
+    background-color: white;
+}
+
+.hero-content {
+    color: white;
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: white;
+    margin-top: -100px;
+    margin-left: -800px;
+}
+
+.hero-content p {
+    font-weight: 350;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: white;
+    margin-top: 10px;
+    margin-left: -450px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-left: 0;
+    
+}
+
+.btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.primary-btn {
+    background-color: white;
+    color: #1f3dff;
+    border: none;
+    margin-left: -550px;
+    border: 2px solid white;
+}
+
+.primary-btn:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+.secondary-btn {
+    background-color: white;
+    color: #1f3dff;
+    border: none;
+}
+
+.secondary-btn:hover {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.form{
+    width: 100%;
+    height: 100%;
+    background-color: #2e3192;
+
+}
+
+.About-section {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-margin-top: 100px; 
+    position: relative;
+    width: 100%;
+}
+
+.About-container {
+    display: flex;
+    max-width: 1200px;
+    gap: 40px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+.About-text {
+    flex: 1 1 60%;
+    font-size: 20px;
+    font-style: normal;
+    color: #000000;
+    margin-top: 60px;
+    font-weight: 300px;
+    line-height: 25px;
+    letter-spacing: 0.11em;
+    margin-left: -80px;
+    align-items: flex-end;
+}
+
+
+.About-text h2 {
+    font-size: 40px;
+    line-height: 70px;
+    font-style: normal;
+    color: #2e3192;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin-left: -10px;
+    margin-top: -40px;
+}
+
+.About-logo {
+    flex: 0 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.About-logo img {
+    max-width: 100%;
+    height: 255px;
+    display: block;
+    margin: auto;
+}
+
+.facilities-section .overlay {
+  background-color: rgba(0, 0, 139, 0.6); 
+  color: white;
+  min-height: 900px; 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 45px;
+  margin-top: -500px;
+  text-align: left;
+  margin-left: -30px;
+  color: white;
+}
+
+.facility-cards {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 100px; 
+  margin-left: -90px;
+  margin-top: -90px;
+  max-width: 1500px;
+  flex-wrap: wrap;
+}
+
+.facility-card {
+  background-color: white;
+  border-radius: 20px;
+  width: 575px;
+  margin-top: 100px;
+  padding-bottom: 40px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.facility-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.facility-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.facility-card h3 {
+  color: #0015d0;
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.facility-card p {
+  font-size: 13.5px;
+  color: #333;
+  padding: 0 15px;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.reserve-btn {
+  background-color: #0033cc;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.reserve-btn:hover {
+  background-color: #001a80;
+}
+
+/*AVR-FORM FUNCTIONS*/
+
+.Avr-body{
+  color: white;
+  min-height: 120vh;
+  background-color: #2e3192;
+}
+.form {
+  display: flex;
+  justify-content: center;
+  padding: -50px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.reservation-form {
+  max-width: 900px;
+  width: 100%;
+  background-color: #2e3192;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 14px;
+  color: #ccc;
+  margin-top: 0;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 260px;
+}
+
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+.Avr-body label {
+  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+.Avr-body input[type="text"],
+.Avr-body input[type="date"] {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid white;
+  border-radius: 6px;
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.Avr-body input[type="text"]::placeholder,
+.Avr-body input[type="date"]::placeholder {
+  color: #ccc;
+}
+
+.Avr-body input[type="text"]:hover,
+.Avr-body input[type="date"]:hover {
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+}
+
+.Avr-body .check-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.check-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.check-group label:hover {
+  color: #ffda44;
+}
+
+.center {
+  justify-content: center;
+  display: flex;
+  margin-top: 25px;
+}
+
+.submit-btn {
+  background-color: white;
+  color: #2d2a85;
+  padding: 12px 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+/*end AVR FORM FUNCTION*/
+
+
+.reservation-form {
+  max-width: 1000px;
+  width: 100%;
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-header h2 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.audi-gym-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 240px;
+}
+
+.form-group.full-width {
+  flex: 1 1 100%;
+}
+
+.audi-gym-body label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.audi-gym-body label:hover {
+  color: #ffda44;
+}
+
+.audi-gym-body input[type="text"],
+.audi-gym-body input[type="date"],
+.audi-gym-body input[type="time"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid white;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.check-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.check-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+.check-group label:hover {
+  color: #ffda44;
+}
+.others-input {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 220px;
+  background-color: transparent;
+  color: white;
+  transition: box-shadow 0.3s ease;
+}
+
+.others-input:hover {
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+.center {
+  justify-content: center;
+  display: flex;
+}
+.submit-btn {
+  background-color: white;
+  color: #2d2a85;
+  padding: 12px 30px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.submit-btn:hover {
+  background-color: #ddd;
+  transform: scale(1.05);
+}
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #2d2a85;
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  gap: 15px;
+  z-index: 1200; /* Increased z-index to be above blur */
+  font-weight: bold;
+  font-size: 18px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup img {
+  width: 32px;
+  height: 32px;
+}
+
+.popup-hidden {
+  display: none;
+}
+
+.blurred {
+  filter: blur(5px);
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .audi-gym-body .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+.form-group {
+    width: 100%;
+  }
+.others-input {
+    width: 100%;
+  }
+}
+
+/*FOOTER AREA*/
+.footer {
+  background-color: #2e3192;
+  color: white;
+  padding: 30px 70px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.footer-left {
+  flex: 1.5;
+  min-width: 300px;
+}
+
+.school-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.school-info .logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.school-title h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.school-title p {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+.description {
+  font-size: 14px;
+  color: white;
+  margin-top: 15px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.contact-item .icon {
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.contact-item p {
+  font-size: 14px;
+  color: white;
+  margin: 0;
+}
+
+
+.footer-center {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-center h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footer-center ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-center ul li {
+  margin-bottom: 8px;
+}
+
+.footer-center ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-center ul li a:hover {
+  color: #ffcc00;
+}
+
+.footer-right {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-right h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.footer-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.footer-right ul li {
+  margin-bottom: 8px;
+}
+
+.footer-right ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-right ul li a:hover {
+  color: #ffcc00;
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+}
+
+.footer hr {
+  margin: 30px 0 20px;
+  border: none;
+  height: 2px;
+  background-color: rgba(192, 188, 188, 0.492);
+}
+
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: #cccccc;
+}
+

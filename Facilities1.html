@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style3.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="Context">
+    <div class="side-context">
+        <div class="profile">
+            <div class="profile-Logo"><img src="images/profile.png" alt="" /></div>
+            <div
+                class="admin"
+                id="admin-profile"
+                tabindex="0"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+            >
+                Admin
+            </div>
+            <button id="logout-button" class="logout-button" style="display: none;">
+                <span class="logout-icon" aria-hidden="true"></span> Logout
+            </button>
+        </div>
+
+        <div class="nav">
+            <div class="nav-item dashboard">
+                <img src="images/dashboard.png" alt="" />
+                <a href="dashboard.html">Dashboard</a>
+            </div>
+            <div class="nav-item pending-requests">
+                <img src="images/pendings.png" alt="" />
+                <a href="requests.html">Pending Requests</a>
+            </div>
+            <div class="nav-item facilities active">
+                <img src="images/facilities.png" alt="" />
+                <a href="Facilities1.html">Facilities</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <!-- NEW DIV TO HOLD HEADER AND TABLE -->
+        <div class="header">
+            <div class="blue">
+                <div class="Logos">
+                    <div class="SRCB-Logo">
+                        <img src="images/SRCB.png" alt="SRCB Logo" />
+                    </div>
+                    <div class="SFASS-Logo">
+                        <img src="images/SFASS.png" alt="SFASS Logo" />
+                    </div>
+                </div>
+                <div class="title">
+                    <div class="Text-2">SRCB</div>
+                    <div class="mess-1">School Facilities Activity Scheduling System</div>
+                </div>
+            </div>
+            <div class="header-2">Facilities</div>
+            <div class="facilities-table-container">
+                <table
+                    class="facilities-table"
+                    border="1"
+                    cellspacing="0"
+                    cellpadding="5"
+                    style="width: 100%; border-collapse: collapse"
+                >
+                    <thead>
+                        <tr>
+                            <th>Facility ID</th>
+                            <th>Facility Name</th>
+                            <th>Status</th>
+                            <th>Availability</th>
+                            <th>Upcoming Bookings</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="facilities-tbody">
+                        <!-- Facilities rows will be dynamically loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const adminProfile = document.getElementById('admin-profile');
+    const logoutButton = document.getElementById('logout-button');
+
+    adminProfile.addEventListener('click', () => {
+        if (logoutButton.style.display === 'none' || logoutButton.style.display === '') {
+            logoutButton.style.display = 'inline-block';
+            adminProfile.setAttribute('aria-expanded', 'true');
+        } else {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    logoutButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    // Optional: Hide logout button if clicking outside
+    document.addEventListener('click', (event) => {
+        if (!adminProfile.contains(event.target) && !logoutButton.contains(event.target)) {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Facilities data key for localStorage
+    const STORAGE_KEY = 'facilitiesData';
+
+    // Load facilities data from localStorage or default data
+    function loadFacilitiesData() {
+        const data = localStorage.getItem(STORAGE_KEY);
+        if (data) {
+            return JSON.parse(data);
+        } else {
+            // Default data if none in localStorage
+            return [
+                {
+                    id: 1,
+                    name: 'AVR',
+                    status: 'Active',
+                    availability: 'Available',
+                    upcomingBookings: '2024-06-10, 2024-06-15',
+                },
+                {
+                    id: 2,
+                    name: 'Audi-Gym',
+                    status: 'Under Maintenance',
+                    availability: 'Occupied',
+                    upcomingBookings: '2024-06-12, 2024-06-18',
+                },
+            ];
+        }
+    }
+
+    // Save facilities data to localStorage
+    function saveFacilitiesData(data) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    }
+
+    // Render facilities table rows
+    function renderFacilitiesTable() {
+        const tbody = document.getElementById('facilities-tbody');
+        const facilities = loadFacilitiesData();
+        tbody.innerHTML = '';
+        facilities.forEach((facility) => {
+            const tr = document.createElement('tr');
+            if (facility.status.toLowerCase() === 'not available') {
+                tr.style.backgroundColor = '#555'; // darken row
+                tr.style.color = '#fff';
+            }
+            tr.innerHTML = `
+                <td>${facility.id}</td>
+                <td>${facility.name}</td>
+                <td>${facility.status}</td>
+                <td>${facility.availability}</td>
+                <td>${facility.upcomingBookings}</td>
+                <td>
+                    <button type="button" aria-label="Edit ${facility.name}" onclick="editFacility(this)">Edit</button>
+                    <button type="button" aria-label="Delete ${facility.name}" onclick="deleteFacility(this)">Delete</button>
+                </td>
+            `;
+            tbody.appendChild(tr);
+        });
+    }
+
+    // Edit facility function (inline editing)
+    function editFacility(button) {
+        const row = button.closest('tr');
+        const isEditing = row.classList.contains('editing');
+
+        if (!isEditing) {
+            row.classList.add('editing');
+            for (let i = 1; i <= 4; i++) {
+                const cell = row.cells[i];
+                const text = cell.textContent;
+                cell.innerHTML = `<input type="text" value="${text}">`;
+            }
+            const actionCell = row.cells[5];
+            actionCell.innerHTML = `
+                <button type="button" onclick="saveFacility(this)">Save</button>
+                <button type="button" onclick="cancelEdit(this)">Cancel</button>
+            `;
+        }
+    }
+
+    // Save edited facility data
+    function saveFacility(button) {
+        const row = button.closest('tr');
+        const facilities = loadFacilitiesData();
+        const id = parseInt(row.cells[0].textContent, 10);
+
+        for (let i = 1; i <= 4; i++) {
+            const cell = row.cells[i];
+            const input = cell.querySelector('input');
+            if (input) {
+                cell.textContent = input.value;
+            }
+        }
+
+        // Update data in localStorage
+        const updatedFacility = {
+            id: id,
+            name: row.cells[1].textContent,
+            status: row.cells[2].textContent,
+            availability: row.cells[3].textContent,
+            upcomingBookings: row.cells[4].textContent,
+        };
+
+        const index = facilities.findIndex((f) => f.id === id);
+        if (index !== -1) {
+            facilities[index] = updatedFacility;
+            saveFacilitiesData(facilities);
+        }
+
+        // Restore action buttons
+        const actionCell = row.cells[5];
+        const facilityName = row.cells[1].textContent;
+        actionCell.innerHTML = `
+            <button type="button" aria-label="Edit ${facilityName}" onclick="editFacility(this)">Edit</button>
+            <button type="button" aria-label="Delete ${facilityName}" onclick="deleteFacility(this)">Delete</button>
+        `;
+
+        row.classList.remove('editing');
+
+        // Update row style if status is "Not Available"
+        if (updatedFacility.status.toLowerCase() === 'Not Available') {
+            row.style.backgroundColor = '#555';
+            row.style.color = '#fff';
+        } else {
+            row.style.backgroundColor = '';
+            row.style.color = '';
+        }
+    }
+
+    // Cancel editing
+    function cancelEdit(button) {
+        const row = button.closest('tr');
+        const facilities = loadFacilitiesData();
+        const id = parseInt(row.cells[0].textContent, 10);
+        const facility = facilities.find((f) => f.id === id);
+        if (facility) {
+            row.cells[1].textContent = facility.name;
+            row.cells[2].textContent = facility.status;
+            row.cells[3].textContent = facility.availability;
+            row.cells[4].textContent = facility.upcomingBookings;
+        }
+
+        const actionCell = row.cells[5];
+        const facilityName = row.cells[1].textContent;
+        actionCell.innerHTML = `
+            <button type="button" aria-label="Edit ${facilityName}" onclick="editFacility(this)">Edit</button>
+            <button type="button" aria-label="Delete ${facilityName}" onclick="deleteFacility(this)">Delete</button>
+        `;
+
+        row.classList.remove('editing');
+
+        // Reset row style if status is "Not Available"
+        if (facility.status.toLowerCase() === 'Not Available') {
+            row.style.backgroundColor = '#555';
+            row.style.color = '#fff';
+        } else {
+            row.style.backgroundColor = '';
+            row.style.color = '';
+        }
+    }
+
+    // Delete facility
+    function deleteFacility(button) {
+        const row = button.closest('tr');
+        const id = parseInt(row.cells[0].textContent, 10);
+        let facilities = loadFacilitiesData();
+        facilities = facilities.filter((f) => f.id !== id);
+        saveFacilitiesData(facilities);
+        renderFacilitiesTable();
+    }
+
+    // Initial render
+    document.addEventListener('DOMContentLoaded', () => {
+        renderFacilitiesTable();
+    });
+</script>
+</body>
+</html>

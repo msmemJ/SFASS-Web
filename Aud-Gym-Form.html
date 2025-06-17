@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Audi-Gym-Form.css">
+        <link rel="stylesheet" href="style1.css">
+        <title>Audi Gym Form</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="scroll-page">
+            <header>
+                <div class="blue">
+                    <div class="Logos">
+                        <div class="SRCB-Logo">
+                            <img src="images/SRCB.png" alt="SRCB Logo" />
+                        </div>
+                        <div class="SFASS-Logo">
+                            <img src="images/SFASS.png" alt="SFASS Logo" />
+                        </div>
+                    </div>
+                    <div class="title">
+                        <div class="Text-2">SRCB</div>
+                            <div class="mess-1">
+                            School Facilities Activity Scheduling System
+                        </div>
+                    </div>
+                </div>
+
+                <div class="white">
+                    <div class="nav">
+                        <div class="Home">
+                            <a href="home.html">Home</a>
+                        </div>
+                        <div class="About">
+                            <a href="about.html">About</a>
+                        </div>
+                        <div class="Facilities active">
+                            <a href="facilities.html">Facilities</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="AUDI-GYM-body">
+                <div id="blur-wrapper">
+                    <div class="AUDI-GYM-form">
+                        <div class="reservation-form">
+                        <div class="form-header">
+                            <h2>Assumption Audi-Gym Reservation Form</h2>
+                            <p>
+                            Please submit the reservation form at least 3 days before the
+                            date needed
+                            </p>
+                        </div>
+
+                        <form id="AUDI-GYM-Form">
+                            <div class="AUDI-GYM-form-row">
+                                <div class="AUDI-GYM form-group">
+                                    <label for="fullname">Full Name:</label>
+                                    <input type="text" id="fullname" placeholder="Enter full name" />
+                                </div>
+                                <div class="AUDI-GYM-form-group">
+                                    <label for="year">Year Level & Section:</label>
+                                    <input type="text" id="year" placeholder="e.g. BSED 2A" />
+                                </div>
+                            </div>
+
+                            <div class="AUDI-GYM-form-group-full-width">
+                                <label for="purpose">Activity/Purpose:</label>
+                                <input type="text" id="purpose" placeholder="Enter purpose of reservation" />
+                            </div>
+
+                            <div class="AUDI-GYM-form-row">
+                                <div class="AUDI-GYM-form-group">
+                                    <label for="startdate">Start Date:</label>
+                                    <input type="date" id="startdate" />
+                                </div>
+                                <div class="AUDI-GYM-form-group">
+                                    <label for="starttime">Time:</label>
+                                    <input type="time" id="starttime" />
+                                </div>
+                            </div>
+
+                            <div class="AUDI-GYM-form-row">
+                                <div class="AUDI-GYM form-group">
+                                    <label for="enddate">End Date:</label>
+                                    <input type="date" id="enddate" />
+                                </div>
+                                <div class="AUDI-GYM-form-group">
+                                    <label for="endtime">Time:</label>
+                                    <input type="time" id="endtime" />
+                                </div>
+                            </div>
+
+                            <div class="AUDI-GYM-form-group-full-width">
+                                
+                                <div class="AUDI-GYM check-group">
+                                    <label><input type="checkbox" /> HED</label>
+                                    <label><input type="checkbox" /> SHS</label>
+                                    <label><input type="checkbox" /> GS</label>
+                                    <label><input type="checkbox" /> JHS</label>
+                                </div>
+                            </div>
+
+                            <div class="AUDI-GYM-form-group-full-width">
+                            
+                                <div class="AUDI-GYM check-group">
+                                    <label><input type="checkbox" /> Laptop</label>
+                                    <label><input type="checkbox" /> HVLS Fan</label>
+                                    <label><input type="checkbox" /> Tables</label>
+                                    <label><input type="checkbox" /> Projector</label>
+                                    <label><input type="checkbox" /> Chairs</label>
+                                    <label><input type="checkbox" /> Sound System</label>
+                                    <label><input type="checkbox" /> Others</label>
+                                    <input type="text" placeholder="Specify Others" />
+                                </div>
+                            </div>
+
+                            <div class="AUDI-GYM center">
+                                <button type="submit" class="submit-btn">Submit</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="success-popup" class="popup hidden">
+                <img src="images/check-icon.png" alt="Success" />
+                <span>Submit Complete!</span>
+            </div>
+
+        </div>
+  </body>
+</html>

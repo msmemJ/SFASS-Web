@@ -1,0 +1,26 @@
+<script>
+    const adminProfile = document.getElementById('admin-profile');
+    const logoutButton = document.getElementById('logout-button');
+
+    adminProfile.addEventListener('click', () => {
+        if (logoutButton.style.display === 'none' || logoutButton.style.display === '') {
+            logoutButton.style.display = 'inline-block';
+            adminProfile.setAttribute('aria-expanded', 'true');
+        } else {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    logoutButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    // Optional: Hide logout button if clicking outside
+    document.addEventListener('click', (event) => {
+        if (!adminProfile.contains(event.target) && !logoutButton.contains(event.target)) {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>

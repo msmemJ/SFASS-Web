@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="style1.css" />
+        <title>Facilities - School Facilities Activity Scheduling System</title>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div class="blue">
+                <div class="Logos">
+                    <div class="SRCB-Logo">
+                        <img src="images/SRCB.png" alt="SRCB Logo" />
+                    </div>
+                    <div class="SFASS-Logo">
+                        <img src="images/SFASS.png" alt="SFASS Logo" />
+                    </div>
+                </div>
+                <div class="title">
+                    <div class="Text-2">SRCB</div>
+                    <div class="mess-1">
+                        School Facilities Activity Scheduling System
+                    </div>
+                </div>
+            </div>
+
+            <div class="white">
+                <div class="nav">
+                    <div class="Home">
+                        <a href="home.html">Home</a>
+                    </div>
+                    <div class="About">
+                        <a href="about.html">About</a>
+                    </div>
+                    <div class="Facilities active">
+                        <a href="facilities.html">Facilities</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero-section">
+            <div class="overlay">
+                <h1 class="section-title">Facilities</h1>
+                <div class="facility-cards" id="facility-cards-container">
+                    <!-- Facility cards will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        </div>
+    </body>
+    <script>
+        const STORAGE_KEY = 'facilitiesData';
+
+        function loadFacilitiesData() {
+            const data = localStorage.getItem(STORAGE_KEY);
+            if (data) {
+                return JSON.parse(data);
+            } else {
+                return [
+                    {
+                        id: 1,
+                        name: 'AVR',
+                        status: 'Active',
+                        availability: 'Available',
+                        upcomingBookings: '2024-06-10, 2024-06-15',
+                        image: 'images/AVR.jpg',
+                        description:
+                            'A modern facility ideal for presentations, lectures, and media-based learning. It features audio and video systems that support an engaging and interactive experience.',
+                        calendarLink: 'calendar-avr.html',
+                    },
+                    {
+                        id: 2,
+                        name: 'Audi-Gym',
+                        status: 'Under Maintenance',
+                        availability: 'Occupied',
+                        upcomingBookings: '2024-06-12, 2024-06-18',
+                        image: 'images/Audi-gym.jpg',
+                        description:
+                            'This spacious gymnasium is designed for sports events, assemblies, and large school functions. It provides a well-ventilated, multi-purpose area equipped for various physical and social activities.',
+                        calendarLink: 'calendar-gym.html',
+                    },
+                ];
+            }
+        }
+
+        function renderFacilityCards() {
+            const container = document.getElementById('facility-cards-container');
+            const facilities = loadFacilitiesData();
+            console.log('Loaded facilities data:', facilities); // Debug log
+            container.innerHTML = '';
+            facilities.forEach((facility) => {
+                console.log('Facility status:', facility.status); // Debug log
+                const card = document.createElement('div');
+                card.className = 'facility-card';
+                if (facility.status.toLowerCase().trim() === 'not available') {
+                    card.style.backgroundColor = '#555';
+                    card.style.color = '#fff';
+                }
+                card.innerHTML = `
+                    <img src="${facility.image}" alt="${facility.name}" />
+                    <h3>${facility.name}</h3>
+                    <p>${facility.description}</p>
+                    <a href="${facility.calendarLink}" class="reserve-btn">Reserve Now</a>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFacilityCards();
+        });
+    </script>
+</html>

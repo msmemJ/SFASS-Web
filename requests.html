@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+
+<div class="Context">
+        <div class="side-context">
+            <div class="profile">
+                <div class="profile-Logo"><img src="images/profile.png" alt=""></div>
+                <div class="admin" id="admin-profile" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">Admin</div>
+                <button id="logout-button" class="logout-button" style="display:none;">
+                    <span class="logout-icon" aria-hidden="true"></span> Logout
+                </button>
+            </div>
+
+
+            <div class="nav">
+                <div class="nav-item dashboard">
+                    <img src="images/dashboard.png" alt="">
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+                <div class="nav-item pending-requests  active">
+                    <img src="images/pendings.png" alt="">
+                    <a href="requests.html">Pending Requests</a>
+                </div>
+                <div class="nav-item facilities">
+                    <img src="images/facilities.png" alt="">
+                    <a href="Facilities1.html">Facilities</a>
+                </div>
+            </div>
+        </div>
+
+    <div class="main-content"> <!-- NEW DIV TO HOLD HEADER AND TABLE -->
+        <div class="header">
+            <div class="blue">
+                <div class="Logos">
+                    <div class="SRCB-Logo">
+                        <img src="images/SRCB.png" alt="SRCB Logo" />
+                    </div>
+                    <div class="SFASS-Logo">
+                        <img src="images/SFASS.png" alt="SFASS Logo" />
+                    </div>
+                </div>
+                <div class="title">
+                    <div class="Text-2">SRCB</div>
+                    <div class="mess-1">
+                        School Facilities Activity Scheduling System
+                    </div>
+                </div>
+            </div>
+            <div class="header-2">
+                Pending Requests
+            </div>
+        </div>
+
+        <div class="content">
+            <table class="requests-table">
+                <thead>
+                    <tr>
+                        <th>Request ID</th>
+                        <th>Student Name</th>
+                        <th>Facility</th>
+                        <th>Purpose</th>
+                        <th>Date Request</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Ishi Regodon</td>
+                        <td>Audi-Gym</td>
+                        <td>Student Assembly</td>
+                        <td>2025-06-01</td>
+                        <td>10:00 AM - 12:00 PM</td>
+                        <td>Pending</td>
+                        <td><button class="approve-btn">Approve</button> <button>Reject</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Princess Joy Macra</td>
+                        <td>AVR</td>
+                        <td>Seminar</td>
+                        <td>2025-06-06</td>
+                        <td>01:00 PM - 03:00 PM</td>
+                        <td>Approved</td>
+                        <td><button class="approve-btn">Approve</button> <button>Reject</button></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Venzy Travilla</td>
+                        <td>Audi-Gym</td>
+                        <td>Dance Practice</td>
+                        <td>2025-06-10</td>
+                        <td>08:00 am - 12:00 PM</td>
+                        <td>Approved</td>
+                        <td><button class="approve-btn">Approve</button> <button>Reject</button></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Riel Mangubat</td>
+                        <td>AVR</td>
+                        <td>Mock Defense</td>
+                        <td>2025-06-10</td>
+                        <td>08:00 am - 12:00 PM</td>
+                        <td>Pending</td>
+                        <td><button class="approve-btn">Approve</button> <button>Reject</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<script>
+    const adminProfile = document.getElementById('admin-profile');
+    const logoutButton = document.getElementById('logout-button');
+
+    adminProfile.addEventListener('click', () => {
+        if (logoutButton.style.display === 'none' || logoutButton.style.display === '') {
+            logoutButton.style.display = 'inline-block';
+            adminProfile.setAttribute('aria-expanded', 'true');
+        } else {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    logoutButton.addEventListener('click', () => {
+        window.location.href = 'index.html';
+    });
+
+    // Optional: Hide logout button if clicking outside
+    document.addEventListener('click', (event) => {
+        if (!adminProfile.contains(event.target) && !logoutButton.contains(event.target)) {
+            logoutButton.style.display = 'none';
+            adminProfile.setAttribute('aria-expanded', 'false');
+        }
+    });
+</script>
+<script>
+    (function() {
+        const adminProfile = document.getElementById('admin-profile');
+        const logoutButton = document.getElementById('logout-button');
+
+        adminProfile.addEventListener('click', () => {
+            if (logoutButton.style.display === 'none' || logoutButton.style.display === '') {
+                logoutButton.style.display = 'inline-block';
+                adminProfile.setAttribute('aria-expanded', 'true');
+            } else {
+                logoutButton.style.display = 'none';
+                adminProfile.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        logoutButton.addEventListener('click', () => {
+            window.location.href = 'index.html';
+        });
+
+        // Optional: Hide logout button if clicking outside
+        document.addEventListener('click', (event) => {
+            if (!adminProfile.contains(event.target) && !logoutButton.contains(event.target)) {
+                logoutButton.style.display = 'none';
+                adminProfile.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Approve button functionality
+        document.querySelectorAll('.approve-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const row = button.closest('tr');
+                if (row) {
+                    const statusCell = row.querySelector('td:nth-child(7)');
+                    const actionCell = row.querySelector('td:nth-child(8)');
+                    if (statusCell) {
+                        statusCell.textContent = 'Approved';
+                    }
+                    if (actionCell) {
+                        // Replace Approve button with Cancel button
+                        actionCell.innerHTML = '<button class="cancel-btn">Cancel</button>';
+                        addCancelButtonListener(actionCell.querySelector('.cancel-btn'), row);
+                    }
+                }
+            });
+        });
+
+        // Function to add event listener to Cancel button
+        function addCancelButtonListener(cancelBtn, row) {
+            cancelBtn.addEventListener('click', () => {
+                const statusCell = row.querySelector('td:nth-child(7)');
+                const actionCell = row.querySelector('td:nth-child(8)');
+                if (statusCell) {
+                    statusCell.textContent = 'Pending';
+                }
+                if (actionCell) {
+                    actionCell.innerHTML = '<button class="approve-btn">Approve</button> <button>Reject</button>';
+                    // Re-add approve button listener to the new Approve button
+                    const newApproveBtn = actionCell.querySelector('.approve-btn');
+                    if (newApproveBtn) {
+                        newApproveBtn.addEventListener('click', () => {
+                            const statusCell = row.querySelector('td:nth-child(7)');
+                            const actionCell = row.querySelector('td:nth-child(8)');
+                            if (statusCell) {
+                                statusCell.textContent = 'Approved';
+                            }
+                            if (actionCell) {
+                                actionCell.innerHTML = '<button class="cancel-btn">Cancel</button>';
+                                addCancelButtonListener(actionCell.querySelector('.cancel-btn'), row);
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    })();
+
+
+    
+</script>
+
+
+</body>
+</html>
